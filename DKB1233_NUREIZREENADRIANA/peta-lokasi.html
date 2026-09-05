@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Peta Lokasi | Laman Informasi di Sabah</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 120px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fffaf2;
+            color: #40534a;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            background: #fffdf8;
+
+            padding: 15px 20px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+
+            margin-top: 40px;
+
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #355c4a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #d9aebb;
+        }
+
+        .menu {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #40534a;
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #a9d4d8;
+            color: #355c4a;
+        }
+
+        .menu .active {
+            background: #7fa58d;
+            color: white;
+        }
+
+        /* =========================
+           BANNER (disamakan dengan index.html)
+        ========================= */
+
+        .banner {
+            background:
+                linear-gradient(
+                    rgba(53,92,74,0.60),
+                    rgba(53,92,74,0.35)
+                ),
+                url("banner-sabah.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 50px 0 0;
+        }
+
+        .banner-content {
+            padding: 0 10%;
+            color: white;
+        }
+
+        .banner-small {
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .banner h1 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 80px;
+            line-height: 1;
+
+            font-weight: 400;
+
+            margin-bottom: 25px;
+        }
+
+        .banner h1 span {
+            color: #cfe4d2;
+        }
+
+        /* =========================
+           TAJUK PETA LOKASI
+        ========================= */
+
+        .page-title-section {
+            text-align: center;
+
+            padding: 60px 20px 0;
+        }
+
+        .page-title-section h1 {
+            font-family: 'DM Serif Display', serif;
+
+            color: #355c4a;
+
+            font-size: 42px;
+            font-weight: 400;
+            line-height: 1.05;
+
+            margin-bottom: 15px;
+        }
+
+        .page-title-section p {
+            max-width: 750px;
+
+            margin: 0 auto;
+
+            color: #40534a;
+
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           PENGENALAN (GOOGLE MAPS)
+        ========================= */
+
+        .intro {
+            padding: 60px 10% 60px;
+            text-align: center;
+        }
+
+        .label {
+            color: #7fa58d;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .intro h2 {
+            font-family: 'DM Serif Display', serif;
+
+            color: #355c4a;
+
+            font-size: 48px;
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            max-width: 750px;
+
+            margin: auto;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 18px;
+            font-weight: 400;
+
+            line-height: 1.9;
+        }
+
+        .intro p strong {
+            color: #355c4a;
+        }
+
+        /* =========================
+           PETA GOOGLE MAPS
+        ========================= */
+
+        .map-section {
+            padding: 0 8% 100px;
+        }
+
+        .map-grid {
+            display: grid;
+
+            grid-template-columns: 1.6fr 1fr;
+
+            gap: 25px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            align-items: stretch;
+        }
+
+        .map-frame {
+            background: #fffdf8;
+
+            border-radius: 30px;
+
+            padding: 20px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 500px;
+
+            border: 0;
+
+            border-radius: 20px;
+
+            display: block;
+        }
+
+        .location-info {
+            background: #f2e7d3;
+
+            border-radius: 30px;
+
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location-info .place-number {
+            color: #7fa58d;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .location-info h3 {
+            font-family: 'DM Serif Display', serif;
+
+            color: #355c4a;
+
+            font-size: 34px;
+            font-weight: 400;
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .location-info p {
+            font-size: 15px;
+            line-height: 1.8;
+
+            color: #40534a;
+
+            margin-bottom: 25px;
+        }
+
+        .location-info hr {
+            border: none;
+            border-top: 1px solid rgba(53,92,74,0.2);
+
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            margin-bottom: 16px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-row strong {
+            display: block;
+
+            color: #355c4a;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            margin-bottom: 3px;
+        }
+
+        .info-row span {
+            font-size: 14px;
+            color: #40534a;
+        }
+
+        /* =========================
+           NATURAL HERITAGE
+        ========================= */
+
+        .heritage {
+            background: #355c4a;
+
+            padding: 90px 8%;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .heritage .label {
+            color: #cfe4d2;
+        }
+
+        .heritage h2 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 46px;
+            font-weight: 400;
+
+            line-height: 1.15;
+
+            margin-bottom: 25px;
+        }
+
+        .heritage-text {
+            max-width: 750px;
+
+            margin: 0 auto;
+
+            font-size: 17px;
+            font-weight: 400;
+
+            line-height: 1.9;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #e8d8b8;
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            color: #40534a;
+        }
+
+        footer h3 {
+            font-family: 'DM Serif Display', serif;
+
+            color: #355c4a;
+
+            font-size: 28px;
+
+            font-weight: 400;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* =========================
+           AUDIO BUTTON
+        ========================= */
+
+        #musicButton {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 60px;
+            height: 60px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d9aebb;
+
+            color: white;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+            z-index: 1000;
+        }
+
+        #musicButton:hover {
+            background: #7fa58d;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .map-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-frame iframe {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .banner h1 {
+                font-size: 55px;
+            }
+
+            .intro h2,
+            .heritage h2 {
+                font-size: 36px;
+            }
+
+            .page-title-section h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .intro {
+                padding: 70px 6% 40px;
+            }
+
+            .intro p {
+                font-size: 15px;
+            }
+
+            .map-section {
+                padding: 0 5% 70px;
+            }
+
+            .location-info {
+                padding: 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- =========================
+         BANNER
+    ========================= -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <div class="banner-small">
+                FIND YOUR WAY
+            </div>
+
+            <h1>
+                Laman Informasi
+                <span>di Sabah</span>
+            </h1>
+
+        </div>
+
+
+        <!-- =========================
+             MENU
+        ========================= -->
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                SABAH<span>.</span>
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        Laman Utama
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tempat-menarik.html">
+                        Tempat Menarik
+                    </a>
+                </li>
+
+                <li>
+                    <a href="peta-lokasi.html" class="active">
+                        Peta Lokasi
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sumber-rujukan.html">
+                        Sumber Rujukan
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </section>
+
+
+    <!-- =========================
+         TAJUK PETA LOKASI
+    ========================= -->
+
+    <div class="page-title-section">
+
+        <h1>
+            Peta Lokasi
+        </h1>
+
+        <p>
+            Ketahui kedudukan Gunung Kinabalu melalui peta interaktif
+            di bawah.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         PENGENALAN GOOGLE MAPS
+    ========================= -->
+
+    <section class="intro">
+
+        <div class="label">
+            GOOGLE MAPS
+        </div>
+
+        <h2>
+            Lokasi Gunung Kinabalu
+        </h2>
+
+        <p>
+            Gunakan peta interaktif di bawah untuk melihat lokasi
+            Gunung Kinabalu di Sabah. Peta ini diintegrasikan
+            menggunakan elemen <strong>iframe</strong> daripada
+            Google Maps.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         PETA & MAKLUMAT LOKASI
+    ========================= -->
+
+    <section class="map-section">
+
+        <div class="map-grid">
+
+            <div class="map-frame">
+
+                <iframe
+                    src="https://www.google.com/maps?q=6.0822,116.5586&z=13&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+            <div class="location-info">
+
+                <div class="place-number">
+                    01 / LOCATION
+                </div>
+
+                <h3>
+                    Gunung Kinabalu
+                </h3>
+
+                <p>
+                    Gunung Kinabalu merupakan mercu tanda semula
+                    jadi terkenal di Sabah dan terletak dalam
+                    kawasan Kinabalu Park.
+                </p>
+
+                <hr>
+
+                <div class="info-row">
+                    <strong>Lokasi</strong>
+                    <span>Sabah, Malaysia</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Kawasan</strong>
+                    <span>Kinabalu Park</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Ketinggian</strong>
+                    <span>4,095.2 meter</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Koordinat</strong>
+                    <span>6.0822° N, 116.5586° E</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NATURAL HERITAGE
+    ========================= -->
+
+    <section class="heritage">
+
+        <div class="label">
+            NATURAL HERITAGE
+        </div>
+
+        <h2>
+            Where nature rises above the clouds.
+        </h2>
+
+        <p class="heritage-text">
+            Kinabalu Park merupakan kawasan Warisan Dunia yang
+            mempunyai kepelbagaian flora dan fauna yang tinggi.
+            Gunung Kinabalu menjadi ciri utama kawasan ini dan
+            merupakan antara mercu alam semula jadi paling
+            terkenal di Sabah.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            LAMAN INFORMASI DI SABAH
+        </h3>
+
+        <p>
+            Meneroka keindahan alam semula jadi Sabah.
+        </p>
+
+        <br>
+
+        <p>
+            ©️ 2026 DKB1233 | Projek Laman Informasi di Sabah
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         AUDIO
+    ========================= -->
+
+    <audio id="backgroundMusic" loop>
+
+        <source
+            src="sabahan.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <button
+        id="musicButton"
+        title="Mainkan muzik">
+
+        ♫
+
+    </button>
+
+
+    <!-- =========================
+         JAVASCRIPT AUDIO
+    ========================= -->
+
+    <script>
+
+        const music =
+            document.getElementById("backgroundMusic");
+
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        /* =========================
+           AMBIL SIMPANAN MUZIK
+        ========================= */
+
+        const savedTime =
+            localStorage.getItem("musicTime");
+
+
+        const musicPlaying =
+            localStorage.getItem("musicPlaying");
+
+
+        /* =========================
+           SAMBUNG KEDUDUKAN LAGU
+        ========================= */
+
+        if (savedTime !== null) {
+
+            music.addEventListener(
+                "loadedmetadata",
+                function () {
+
+                    music.currentTime =
+                        parseFloat(savedTime);
+
+                }
+            );
+
+        }
+
+
+        /* =========================
+           SAMBUNG MUZIK
+        ========================= */
+
+        if (musicPlaying === "true") {
+
+            music.play()
+                .then(function () {
+
+                    musicButton.innerHTML = "❚❚";
+
+                })
+                .catch(function () {
+
+                    /*
+                    Jika browser block autoplay,
+                    user boleh tekan button muzik.
+                    */
+
+                    musicButton.innerHTML = "♫";
+
+                });
+
+        }
+
+
+        /* =========================
+           BUTTON MUZIK
+        ========================= */
+
+        musicButton.onclick = function () {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(function () {
+
+                        localStorage.setItem(
+                            "musicPlaying",
+                            "true"
+                        );
+
+                        musicButton.innerHTML =
+                            "❚❚";
+
+                    })
+                    .catch(function () {
+
+                        musicButton.innerHTML =
+                            "♫";
+
+                    });
+
+            } else {
+
+                music.pause();
+
+
+                localStorage.setItem(
+                    "musicPlaying",
+                    "false"
+                );
+
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+
+                musicButton.innerHTML =
+                    "♫";
+
+            }
+
+        };
+
+
+        /* =========================
+           SIMPAN KEDUDUKAN LAGU
+        ========================= */
+
+        music.addEventListener(
+            "timeupdate",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+            }
+        );
+
+
+        /* =========================
+           SEBELUM PINDAH PAGE
+        ========================= */
+
+        window.addEventListener(
+            "beforeunload",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+
+                localStorage.setItem(
+                    "musicPlaying",
+                    !music.paused
+                );
+
+            }
+        );
+
+
+        /* =========================
+           BILA LAGU HABIS
+        ========================= */
+
+        music.addEventListener(
+            "ended",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    "0"
+                );
+
+            }
+        );
+
+
+                        /* Kekalkan pemain muzik ketika navigasi dalaman. */
+                        document.addEventListener("click", function (event) {
+
+                            const link = event.target.closest("a");
+
+                            if (!link || link.origin !== location.origin ||
+                                link.target === "_blank" || link.pathname === location.pathname) {
+                                return;
+                            }
+
+                            event.preventDefault();
+                            navigateTo(link.href, true);
+
+                        });
+
+
+                        async function navigateTo(url, addHistory) {
+
+                            try {
+
+                                const response = await fetch(url);
+                                const page = new DOMParser().parseFromString(
+                                    await response.text(),
+                                    "text/html"
+                                );
+
+                                page.head.querySelectorAll("style").forEach(function (style) {
+                                    document.head.appendChild(style.cloneNode(true));
+                                });
+
+                                const pageChildren = Array.from(page.body.children)
+                                    .filter(function (child) {
+                                        return child.id !== "backgroundMusic" &&
+                                            child.id !== "musicButton" &&
+                                            child.tagName !== "SCRIPT";
+                                    })
+                                    .map(function (child) {
+                                        return child.cloneNode(true);
+                                    });
+
+                                document.body.replaceChildren(
+                                    ...pageChildren,
+                                    music,
+                                    musicButton
+                                );
+
+                                document.title = page.title;
+
+                                if (addHistory) {
+                                    history.pushState({}, "", url);
+                                }
+
+                                if (location.hash) {
+                                    document.getElementById(location.hash.slice(1))?.scrollIntoView();
+                                } else {
+                                    window.scrollTo(0, 0);
+                                }
+
+                            } catch (error) {
+
+                                location.href = url;
+
+                            }
+
+                        }
+
+
+                        window.addEventListener("popstate", function () {
+                            navigateTo(location.href, false);
+                        });
+
+    </script>
+
+
+</body>
+
+</html>

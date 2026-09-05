@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sumber Rujukan | Laman Informasi di Sabah</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fffaf2;
+            color: #40534a;
+        }
+
+
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+            min-height: 248px;
+
+            background:
+                linear-gradient(
+                    rgba(53, 92, 74, 0.45),
+                    rgba(53, 92, 74, 0.30)
+                ),
+                url("banner-sabah.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            color: white;
+        }
+
+
+        .banner-content {
+            padding: 55px 10% 55px;
+        }
+
+
+        .banner-small {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+
+        .banner h1 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 70px;
+            line-height: 1;
+
+            font-weight: 400;
+        }
+
+
+        .banner h1 span {
+            color: #cfe4d2;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            width: 100%;
+
+            background: #fffdf8;
+
+            padding: 14px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 38px;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 999;
+        }
+
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            color: #355c4a;
+
+            margin-right: 15px;
+        }
+
+
+        .logo span {
+            color: #d9aebb;
+        }
+
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .menu a {
+            text-decoration: none;
+
+            color: #40534a;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            padding: 12px 18px;
+
+            border-radius: 30px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .menu a:hover {
+            background: #cfe4d2;
+            color: #355c4a;
+        }
+
+
+        .menu a.active {
+            background: #7fa58d;
+            color: white;
+        }
+
+
+        /* =========================
+           RUJUKAN SECTION
+        ========================= */
+
+        .reference-section {
+            min-height: 500px;
+
+            padding: 65px 8% 80px;
+
+            background: #fffaf2;
+
+            text-align: center;
+        }
+
+
+        .reference-label {
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            color: #7fa58d;
+
+            margin-bottom: 15px;
+        }
+
+
+        .reference-section h2 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 46px;
+
+            font-weight: 400;
+
+            color: #355c4a;
+
+            margin-bottom: 15px;
+        }
+
+
+        .reference-intro {
+            max-width: 720px;
+
+            margin: 0 auto 45px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #40534a;
+        }
+
+
+        /* =========================
+           REFERENCE CARDS
+        ========================= */
+
+        .reference-container {
+            max-width: 950px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .reference-card {
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            padding: 35px 30px;
+
+            box-shadow:
+                0 8px 25px rgba(53, 92, 74, 0.10);
+
+            border: 1px solid #eee8dc;
+
+            transition: 0.3s ease;
+        }
+
+
+        .reference-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 35px rgba(53, 92, 74, 0.16);
+        }
+
+
+        .reference-number {
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #d9aebb;
+
+            margin-bottom: 12px;
+        }
+
+
+        .reference-card h3 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 30px;
+
+            font-weight: 400;
+
+            color: #355c4a;
+
+            margin-bottom: 15px;
+        }
+
+
+        .reference-card p {
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: #65746c;
+
+            margin-bottom: 25px;
+        }
+
+
+        .reference-button {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #355c4a;
+
+            color: white;
+
+            padding: 11px 23px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+
+        .reference-button:hover {
+            background: #7fa58d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #e8d8b8;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #40534a;
+        }
+
+
+        footer h3 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 24px;
+
+            font-weight: 400;
+
+            color: #355c4a;
+
+            margin-bottom: 5px;
+        }
+
+
+        footer p {
+            font-size: 12px;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        #musicButton {
+            position: fixed;
+
+            right: 25px;
+            bottom: 15px;
+
+            width: 60px;
+            height: 60px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d9aebb;
+
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+
+            z-index: 2000;
+
+            transition: 0.3s ease;
+        }
+
+
+        #musicButton:hover {
+            transform: scale(1.08);
+
+            background: #c99aaa;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .banner {
+                min-height: 330px;
+            }
+
+
+            .banner-content {
+                padding: 45px 7% 45px;
+            }
+
+
+            .banner h1 {
+                font-size: 55px;
+            }
+
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .menu {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .reference-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .banner {
+                min-height: 300px;
+            }
+
+
+            .banner-content {
+                padding: 40px 6%;
+            }
+
+
+            .banner-small {
+                font-size: 12px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 18px;
+            }
+
+
+            .banner h1 {
+                font-size: 43px;
+            }
+
+
+            nav {
+                padding: 12px 10px;
+
+                gap: 5px;
+            }
+
+
+            .logo {
+                width: 100%;
+
+                text-align: center;
+
+                margin-right: 0;
+
+                margin-bottom: 3px;
+            }
+
+
+            .menu a {
+                font-size: 11px;
+
+                padding: 9px 10px;
+            }
+
+
+            .reference-section {
+                padding: 50px 6%;
+            }
+
+
+            .reference-section h2 {
+                font-size: 38px;
+            }
+
+
+            .reference-intro {
+                font-size: 14px;
+            }
+
+
+            #musicButton {
+                width: 52px;
+
+                height: 52px;
+
+                right: 18px;
+
+                bottom: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BANNER
+    ========================= -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <div class="banner-small">
+                EXPLORE • DISCOVER • EXPERIENCE
+            </div>
+
+            <h1>
+                Laman Informasi
+                <span>di Sabah</span>
+            </h1>
+
+        </div>
+
+
+        <!-- =========================
+             NAVIGATION
+        ========================= -->
+
+        <nav>
+
+            <div class="logo">
+                SABAH<span>.</span>
+            </div>
+
+
+            <div class="menu">
+
+                <a href="index.html">
+                    Laman Utama
+                </a>
+
+                <a href="tempat-menarik.html">
+                    Tempat Menarik
+                </a>
+
+                <a href="peta-lokasi.html">
+                    Peta Lokasi
+                </a>
+
+                <a href="sumber-rujukan.html" class="active">
+                    Sumber Rujukan
+                </a>
+
+            </div>
+
+        </nav>
+
+    </section>
+
+
+
+    <!-- =========================
+         SUMBER RUJUKAN
+    ========================= -->
+
+    <section class="reference-section">
+
+        <div class="reference-label">
+            SUMBER RUJUKAN
+        </div>
+
+
+        <h2>
+            Sumber Rujukan
+        </h2>
+
+
+        <p class="reference-intro">
+            Maklumat yang digunakan dalam laman informasi ini
+            diperoleh daripada sumber rasmi bagi memastikan
+            kandungan yang disampaikan tepat, relevan dan sahih.
+        </p>
+
+
+
+        <div class="reference-container">
+
+
+            <!-- SABAH TOURISM BOARD -->
+
+            <div class="reference-card">
+
+                <div class="reference-number">
+                    01 / TOURISM
+                </div>
+
+
+                <h3>
+                    Sabah Tourism Board
+                </h3>
+
+
+                <p>
+                    Portal rasmi pelancongan Sabah yang menyediakan
+                    maklumat berkaitan destinasi, aktiviti dan
+                    tempat menarik di Sabah.
+                </p>
+
+
+                <a
+                    href="https://sabahtourism.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="reference-button"
+                >
+                    Lawati Portal
+                </a>
+
+            </div>
+
+
+
+            <!-- SABAH PARKS -->
+
+            <div class="reference-card">
+
+                <div class="reference-number">
+                    02 / NATURE
+                </div>
+
+
+                <h3>
+                    Sabah Parks
+                </h3>
+
+
+                <p>
+                    Laman rasmi Sabah Parks yang menyediakan
+                    maklumat berkaitan taman-taman negeri,
+                    kawasan pemuliharaan dan khazanah alam Sabah.
+                </p>
+
+
+                <a
+                    href="https://www.sabahparks.org.my/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="reference-button"
+                >
+                    Lawati Portal
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            LAMAN INFORMASI DI SABAH
+        </h3>
+
+        <p>
+            Explore • Discover • Experience
+        </p>
+
+        <p>
+            © 2026 Laman Informasi di Sabah
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         AUDIO
+    ========================= -->
+
+    <audio id="backgroundMusic" loop>
+
+        <source
+            src="sabahan.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <button
+        id="musicButton"
+        title="Mainkan muzik"
+    >
+        ♫
+    </button>
+
+
+
+    <script>
+
+        /* =========================
+           BACKGROUND MUSIC
+        ========================= */
+
+        const music =
+            document.getElementById("backgroundMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        let savedTime =
+            parseFloat(
+                localStorage.getItem("musicTime") || "0"
+            );
+
+
+        let musicPlaying =
+            localStorage.getItem("musicPlaying") === "true";
+
+
+        music.addEventListener(
+            "loadedmetadata",
+            function () {
+
+                if (savedTime < music.duration) {
+
+                    music.currentTime = savedTime;
+
+                }
+
+                if (musicPlaying) {
+
+                    music.play().catch(() => {});
+
+                }
+
+            }
+        );
+
+
+        musicButton.addEventListener(
+            "click",
+            function () {
+
+                if (music.paused) {
+
+                    music.play();
+
+                    localStorage.setItem(
+                        "musicPlaying",
+                        "true"
+                    );
+
+                } else {
+
+                    music.pause();
+
+                    localStorage.setItem(
+                        "musicPlaying",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+
+        music.addEventListener(
+            "timeupdate",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+            }
+        );
+
+
+        window.addEventListener(
+            "beforeunload",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+                localStorage.setItem(
+                    "musicPlaying",
+                    !music.paused
+                );
+
+            }
+        );
+
+
+        music.addEventListener(
+            "ended",
+            function () {
+
+                localStorage.setItem(
+                    "musicTime",
+                    "0"
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
